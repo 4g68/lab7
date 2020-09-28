@@ -20,6 +20,10 @@ export class TodoInputComponent implements OnInit {
     console.log("'" + this.entry + "'")
   }
 
+  public clearList(): void {
+    this.liService.clear();
+  }
+
   public changeValue(e) {
     this.entry = e.target.value;;
   }

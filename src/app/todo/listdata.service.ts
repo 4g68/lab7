@@ -5,16 +5,21 @@ import { Subject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ListDataService {
-  private todoilist :string[] = [];
-  private todolist = new Subject<string[]>();
+  private todoListInternal :string[] = [];
+  private todoList = new Subject<string[]>();
   
   constructor() { }
 
   public get(): Observable<string[]> {
-    return this.todolist.asObservable();
+    return this.todoList.asObservable();
   }
   public put(value: string): void {
-    this.todoilist.push(value);
-    this.todolist.next(this.todoilist);
-  }  
+    this.todoListInternal.push(value);
+    this.todoList.next(this.todoListInternal);
+  }
+
+  public clear(): void {
+    this.todoListInternal = [];
+    this.todoList.next(this.todoListInternal);
+  }
 }
