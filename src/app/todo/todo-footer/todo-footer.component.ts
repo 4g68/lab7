@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ListdataService } from '../../listdata.service'
+import { ListDataService } from '../listdata.service'
 
 
 @Component({
@@ -13,7 +13,7 @@ export class TodoFooterComponent implements OnInit {
   count: number = 0;
   
   constructor(
-    private liService: ListdataService // inject service
+    private liService: ListDataService // inject service
   ) {}
 
   ngOnDestroy(): void {

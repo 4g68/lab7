@@ -4,7 +4,7 @@ import { Subject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ListdataService {
+export class ListDataService {
   private todoilist :string[] = [];
   private todolist = new Subject<string[]>();
   
@@ -16,5 +16,5 @@ export class ListdataService {
   public put(value: string): void {
     this.todoilist.push(value);
     this.todolist.next(this.todoilist);
-  }
+  }  
 }

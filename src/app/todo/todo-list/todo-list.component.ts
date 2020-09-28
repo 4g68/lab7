@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ListdataService } from '../../listdata.service'
+import { ListDataService } from '../listdata.service'
 
 @Component({
   selector: 'app-todo-list',
@@ -12,7 +12,7 @@ export class TodoListComponent implements OnInit {
   entry : string[];
   
   constructor(
-    private liService: ListdataService // inject service
+    private liService: ListDataService // inject service
   ) {}
 
   ngOnDestroy(): void {
